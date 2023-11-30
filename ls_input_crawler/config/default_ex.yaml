@@ -1,0 +1,25 @@
+lang_check_config:
+  wp_desired_lang: en
+  wp_lang_thresh: 0.15
+paths:
+  adult_content_word_list: ./adult_content_word_list/ac_list_1.txt
+  ckpt_dir: ./checkpoint/
+  lang_stop_word_list: ./stop_word_list/stop_word_list_174.txt
+  uri_input_path: /mnt/data/pubwww_seed_url_og/advertising/sorted/high/l100.txt
+  uri_output_dir: /mnt/data/pubwww_seed_url_og/advertising/crawled/test/
+puppeteer_config:
+  headless: new
+  page_load_time_out: 3
+  wait_until: networkidle2
+ss_dup_rem:
+  thold: 90
+wp_exp_conf:
+  click_timeout: 2
+  depth: 3
+  max_clicks: max
+  max_num_bad_clicks: 3
+  num_prog_retry: 1000000
+  start_from_ckpt: true
+  view_height: 768
+  view_width: 1024
+

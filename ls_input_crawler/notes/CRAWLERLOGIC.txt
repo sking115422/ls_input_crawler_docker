@@ -1,0 +1,68 @@
+      
+
+      //LAUNCH THE BROWSER WITH REQURIED FLAGS AND SETTINGS
+
+      const page = await browser.newPage(); //open new tab
+      await (await browser.pages())[0].close(); //close first one, to overcome the bug in stealth library mentioned in
+      //https://github.com/berstend/puppeteer-extra/issues/88
+      var visited_URLs =new Set()
+
+      var wait_interval = 5000
+
+
+       // checks if the timeout has exceeded every few seconds
+       var trigger = await setInterval(async function()
+       {
+
+           // close the browser if the run exfceeds timeout interval
+           if (count >= the_interval )
+           {
+             config.log.info(new Date(Date.now()).toLocaleString())
+             config.log.info('visit ended,exiting program')
+
+             clearInterval(trigger);
+   
+
+
+             return
+           }
+           count = count+wait_interval
+       }, wait_interval);
+
+
+
+       try{
+
+
+        config.log.info('Crawling is started. Visiting page:'+config.url)
+        config.log.info("Browser version is:"+(await page.browser().version()))
+        await page.goto(config.url , { waitUntil: 'networkidle2'});
+
+
+        var url_first_tab= page.url() // GET THE URL OF THE LANDING TAB OR THE FIRST TAB
+	      var tabCount=(await browser.pages()).length // CHECK HOW MANY TABS THERE INITIALY
+        // CALCULATE THE ELEMENT COORDINATES TO 
+        
+        for (const i in elem_coords){    // START CLICKING ON CALCULATED COORDINATES IN THE LOOP AND CHECK IF NEW TABS OPENED
+         //HERE I PERFORM THE FIRST CLICK AND TAKE THE SCREENSHOT AND CHECK IF A NEW TAB OPENED AFTER THAT CLICK
+
+         url_next=page.url() //CHECK IF THE URL ON THE LANDING TAB HAS CHANGED IF SO PERFORM REQUIRED OPERATIONS
+         var tabCountClicked=(await browser.pages()).length // CHECK IF NEW TABS OPENED AFTER THE CLICK
+        
+ 	       while (tabCountClicked != tabCount){ 
+            // HERE WE WILL VISIT ALL THE OPENED TABS, AND CLOSE THEM AFTER TAKING SCREENSHOTS AND MAKING ADDITIONAL CLICKS
+	          var page_next =(await browser.pages())[tabCountClicked-1]
+	          url_next= page_next.url()
+            // HERE YOU CAN DEFINE ADDITIONAL FUNCTIONS TO PERFORM OPERATIONS ON NEW TABS
+	          await page_next.close()
+            tabCountClicked=tabCountClicked-1
+
+
+
+
+        }
+
+        }
+   	// CLOSE THE BROWSER AFTER ALL PERFORMING ALL CLICKS OR HIT THE TIMEOUT OR REACH AN EXCEPTION
+
+	
