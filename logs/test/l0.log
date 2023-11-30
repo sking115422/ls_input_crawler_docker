@@ -1,0 +1,46 @@
+cleaning checkpoint dir...
+file currently running: /mnt/data/pubwww_seed_url_og/advertising/sorted/high/l0.txt
+ss_crawler.js is not running. Restarting...
+###############################################
+cd ./ls_input_crawler/ && node ss_crawler.js
+STARTING URI EXPLORATION
+http://www.chorearir.com/
+TimeoutError: Navigation timeout of 3000 ms exceeded
+    at new Deferred (/home/sdk/ls_input_crawler_docker/ls_input_crawler/node_modules/puppeteer-core/lib/cjs/puppeteer/util/Deferred.js:26:34)
+    at Deferred.create (/home/sdk/ls_input_crawler_docker/ls_input_crawler/node_modules/puppeteer-core/lib/cjs/puppeteer/util/Deferred.js:68:16)
+    at new LifecycleWatcher (/home/sdk/ls_input_crawler_docker/ls_input_crawler/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/LifecycleWatcher.js:75:60)
+    at CdpFrame.goto (/home/sdk/ls_input_crawler_docker/ls_input_crawler/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:141:29)
+    at CdpFrame.<anonymous> (/home/sdk/ls_input_crawler_docker/ls_input_crawler/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:108:27)
+    at CdpPage.goto (/home/sdk/ls_input_crawler_docker/ls_input_crawler/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:595:43)
+    at exploreUri (/home/sdk/ls_input_crawler_docker/ls_input_crawler/ss_crawler.js:478:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exploreUriToDepth (/home/sdk/ls_input_crawler_docker/ls_input_crawler/ss_crawler.js:537:23)
+    at async exploreUriListToDepth (/home/sdk/ls_input_crawler_docker/ls_input_crawler/ss_crawler.js:570:24)
+0
+1
+2
+http://www.nydaytrippers.com/
+0
+1
+2
+http://doughpe.co.uk/
+0
+TimeoutError: Navigation timeout of 3000 ms exceeded
+    at new Deferred (/home/sdk/ls_input_crawler_docker/ls_input_crawler/node_modules/puppeteer-core/lib/cjs/puppeteer/util/Deferred.js:26:34)
+    at Deferred.create (/home/sdk/ls_input_crawler_docker/ls_input_crawler/node_modules/puppeteer-core/lib/cjs/puppeteer/util/Deferred.js:68:16)
+    at new LifecycleWatcher (/home/sdk/ls_input_crawler_docker/ls_input_crawler/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/LifecycleWatcher.js:75:60)
+    at CdpFrame.goto (/home/sdk/ls_input_crawler_docker/ls_input_crawler/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:141:29)
+    at CdpFrame.<anonymous> (/home/sdk/ls_input_crawler_docker/ls_input_crawler/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:108:27)
+    at CdpPage.goto (/home/sdk/ls_input_crawler_docker/ls_input_crawler/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:595:43)
+    at exploreUri (/home/sdk/ls_input_crawler_docker/ls_input_crawler/ss_crawler.js:478:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async exploreUriToDepth (/home/sdk/ls_input_crawler_docker/ls_input_crawler/ss_crawler.js:537:23)
+    at async exploreUriListToDepth (/home/sdk/ls_input_crawler_docker/ls_input_crawler/ss_crawler.js:570:24)
+1
+2
+STARTING DUPLICATE SITE REMOVAL
+original uri_list: 8
+indecies removed: [ 4, 5, 6, 7 ]
+dup removed uri_list: 4
+l0.txt complete successfully!
+###############################################

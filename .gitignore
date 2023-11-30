@@ -1,7 +1,8 @@
 node_modules
 ss
 web_drivers
-logs
+logs/*
+!logs/test
 checkpoint
 default.yaml
 
